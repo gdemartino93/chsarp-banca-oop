@@ -70,6 +70,9 @@ namespace chsarp_banca_oop
             customers.Add(newCustomer);
             Console.WriteLine("Cliente aggiunto");
         }
-
+        public void AddLoan(Loan newLoan)
+        {
+            loans.Add(newLoan);
+        }
     }
 }

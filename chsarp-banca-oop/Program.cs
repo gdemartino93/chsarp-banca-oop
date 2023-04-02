@@ -34,6 +34,7 @@
             
             case 1:
                     Console.WriteLine("Aggiungi cliente");
+                    Console.WriteLine(spacer);
                     Console.WriteLine("Inserisci nome cliente");
                     string name = Console.ReadLine();
                     Console.WriteLine("Inserisci cognome cliente");
@@ -50,8 +51,7 @@
 
             }
 
-            
-
+            sharpBank.GetAllCustomer();
         }
     }
 }

@@ -23,8 +23,7 @@ namespace chsarp_banca_oop
             Console.WriteLine("[4] Ricerca prestiti di un Cliente");
             Console.WriteLine("[5] Ottieni il totale in euro dei prestiti per un Cliente");
             Console.WriteLine("[6] Ottieni il numero totale RESIDUO di rate da pagare per un Cliente");
-            Console.WriteLine("[7] Prospetto prestiti");
-            Console.WriteLine("[8] Esci");
+            Console.WriteLine("[7] Esci");
             Console.WriteLine(spacer);
 
             int scelta = Convert.ToInt32(Console.ReadLine());
@@ -103,6 +102,7 @@ namespace chsarp_banca_oop
                     search = Console.ReadLine();
                     Console.WriteLine($"Il totale di rate del cliente cercato, ancora da pagare, è: {sharpBank.NumberOfInstallmentUser(search)}");
                     break;
+              
             }
 
         }

@@ -22,14 +22,21 @@ namespace chsarp_banca_oop
             customers = new List<Customer>();
             loans = new List<Loan>();
 
-            Customer cliente = new Customer("helloname", "hellolastname", "asdasdasdasdasda", 12);
-            DateTime dataInizio = DateTime.Parse("12/01/2000");
-            DateTime dataFine = DateTime.Parse("12/12/2001");
-            Loan prestito1 = new Loan(1, cliente, 1000, 100,dataInizio,dataFine);
-            Loan prestito2 = new Loan(1, cliente, 5000, 100, dataInizio, dataFine);
+
+            Customer cliente = new Customer("Sara", "Bianchi", "asdasdasdasdasda", 1500);
+            Customer cliente1 = new Customer("Marco", "Rossi", "aaaaaaaaaaaaaaaa", 1020);
             customers.Add(cliente);
+            customers.Add(cliente1);
+
+            Loan prestito1 = new Loan(1, cliente, 10000, 100, DateTime.Parse("12/01/2000"), DateTime.Parse("12/12/2001"));
+            Loan prestito2 = new Loan(2, cliente1, 1000, 100, DateTime.Parse("12/01/2000"), DateTime.Parse("12/12/2001"));
+            Loan prestito3 = new Loan(3, cliente1, 10000, 100, DateTime.Parse("12/01/2000"), DateTime.Parse("12/12/2001"));
+            Loan prestito4 = new Loan(4, cliente, 1000, 100, DateTime.Parse("12/01/2000"), DateTime.Parse("12/12/2001"));
+
             loans.Add(prestito1);
             loans.Add(prestito2);
+            loans.Add(prestito3);
+            loans.Add(prestito4);
         }
         public override string ToString()
         {
@@ -134,7 +141,7 @@ namespace chsarp_banca_oop
                     customerLoans.Add(loan);
                 }
             }
-            return loans;
+            return customerLoans;
         }
         public int TotalAmountLoan(string fiscalCode)
         {

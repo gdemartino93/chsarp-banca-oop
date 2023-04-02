@@ -18,7 +18,7 @@
             Console.WriteLine("[1] Aggiungi Cliente");
             Console.WriteLine("[2] Modifica Cliente");
             Console.WriteLine("[3] Ricerca Cliente");
-            Console.WriteLine("[4] Ricerca prestito Cliente");
+            Console.WriteLine("[4] Ricerca prestiti di un Cliente");
             Console.WriteLine("[5] Aggiungi prestito");
             Console.WriteLine("[6] Prospetto prestiti bamca");
             Console.WriteLine("[7] Prospetto prestiti");
@@ -78,6 +78,8 @@
                     customerFounded.ToString(); //metodo tostring per stampare l'oggetto cercato
                     break;
             }
+
+
             Console.WriteLine("ecco la lista di tutti i clienti");
             sharpBank.GetAllCustomers();
         }

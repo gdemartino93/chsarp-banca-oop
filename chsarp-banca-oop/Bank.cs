@@ -9,8 +9,9 @@ namespace chsarp_banca_oop
     internal class Bank
     {
         private string name;
-        private List<Cliente> customer;
+        private List<Customer> customers;
         private List<Prestito> loan;
         public string Name { get; set; }
+        public Customer Customers { get; set; }
     }
 }

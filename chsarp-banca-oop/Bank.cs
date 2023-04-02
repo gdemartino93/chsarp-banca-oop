@@ -10,8 +10,20 @@ namespace chsarp_banca_oop
     {
         private string name;
         private List<Customer> customers;
-        private List<Prestito> loan;
+        private List<Loan> loans;
         public string Name { get; set; }
         public Customer Customers { get; set; }
+        public Loan Loans { get; set; }
+
+        public Bank(string name, Customer customers, Loan loans)
+        {
+            Name = name;
+            Customers = customers;
+            Loans = loans;
+        }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

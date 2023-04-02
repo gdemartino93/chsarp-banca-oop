@@ -22,7 +22,7 @@ namespace chsarp_banca_oop
             Console.WriteLine("[3] Ricerca Cliente");
             Console.WriteLine("[4] Ricerca prestiti di un Cliente");
             Console.WriteLine("[5] Ottieni il totale in euro dei prestiti per un Cliente");
-            Console.WriteLine("[6] Prospetto prestiti bamca");
+            Console.WriteLine("[6] Ottieni il numero totale RESIDUO di rate da pagare per un Cliente");
             Console.WriteLine("[7] Prospetto prestiti");
             Console.WriteLine("[8] Esci");
             Console.WriteLine(spacer);

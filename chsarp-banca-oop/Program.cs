@@ -98,6 +98,11 @@ namespace chsarp_banca_oop
                     Console.WriteLine($"Il totale dei prestiti del cliente cercato è: {sharpBank.TotalAmountLoan(search)} euro");
 
                     break;
+                case 6:
+                    Console.WriteLine("Inserisci il codice fiscale dell'utente da cercare");
+                    search = Console.ReadLine();
+                    Console.WriteLine($"Il totale di rate del cliente cercato, ancora da pagare, è: {sharpBank.NumberOfInstallmentUser(search)}");
+                    break;
             }
 
         }

@@ -27,6 +27,7 @@ namespace chsarp_banca_oop
             DateTime dataFine = DateTime.Parse("12/12/2001");
             Loan prestito1 = new Loan(1, cliente, 1000, 100,dataInizio,dataFine);
             customers.Add(cliente);
+            loans.Add(prestito1);
         }
         public override string ToString()
         {
@@ -123,12 +124,12 @@ namespace chsarp_banca_oop
             {
                 return null;
             }
-            List <Loan> loans = new List<Loan>();
+            List <Loan> customerLoans = new List<Loan>();
             foreach(Loan loan in loans)
             {
                 if(loan.Customer.FiscalCode == customer.FiscalCode)
                 {
-                    loans.Add(loan);
+                    customerLoans.Add(loan);
                 }
             }
             return loans;

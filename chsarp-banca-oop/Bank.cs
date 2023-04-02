@@ -15,11 +15,10 @@ namespace chsarp_banca_oop
         public Customer Customers { get; set; }
         public Loan Loans { get; set; }
 
-        public Bank(string name, Customer customers, Loan loans)
+        public Bank(string name)
         {
             Name = name;
-            Customers = customers;
-            Loans = loans;
+ 
         }
         public override string ToString()
         {

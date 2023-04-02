@@ -77,6 +77,19 @@
                     Customer customerFounded = sharpBank.SearchCustomer(search); //ci ritorna l'oggetto customer cercato
                     customerFounded.ToString(); //metodo tostring per stampare l'oggetto cercato
                     break;
+                case 4:
+                    Console.WriteLine("Inserisci il codice fiscale dell'utente da cercare");
+                    search = Console.ReadLine();
+
+                    List<Loan> loansCustomer = sharpBank.CustomerLoan(search);
+                    foreach(Loan loan in loansCustomer)
+                    {
+                        Console.WriteLine(spacer);
+                        loan.ToString();
+                        Console.WriteLine(spacer);
+                    }
+
+                    break;
             }
 
 

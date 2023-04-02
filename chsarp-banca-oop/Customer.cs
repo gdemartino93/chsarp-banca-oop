@@ -25,5 +25,9 @@ namespace chsarp_banca_oop
             FiscalCode = fiscalCode;
             Salary = salary;
         }
+        public void ToString()
+        {
+            Console.WriteLine($"{Name} {Lastname} - CF: {FiscalCode} - Stipendio: {Salary}");
+        }
     }
 }

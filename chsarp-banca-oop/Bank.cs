@@ -158,7 +158,12 @@ namespace chsarp_banca_oop
             }
             return total;
         }
-        public int NumberOfInstallment(string fiscalCode)
+        //otteniamo il numero di rate
+        public int NumberInstallment(Loan loan)
+        {
+            return loan.TotalLoan / loan.Installment;
+        }
+        public int NumberOfInstallmentUser(string fiscalCode)
         {
             Customer customer = SearchCustomer(fiscalCode);
             if(customer == null)
@@ -166,6 +171,13 @@ namespace chsarp_banca_oop
                 return 0;
             }
             List<Loan> customerLoans = CustomerLoan(fiscalCode);
+            int sum = 0;
+            foreach(Loan customerLoan in customerLoans)
+            {
+               int installment = NumberInstallment(customerLoan);
+                sum += installment;
+            }
+            return sum;
         }
 
 

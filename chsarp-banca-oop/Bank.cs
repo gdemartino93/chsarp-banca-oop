@@ -26,8 +26,10 @@ namespace chsarp_banca_oop
             DateTime dataInizio = DateTime.Parse("12/01/2000");
             DateTime dataFine = DateTime.Parse("12/12/2001");
             Loan prestito1 = new Loan(1, cliente, 1000, 100,dataInizio,dataFine);
+            Loan prestito2 = new Loan(1, cliente, 5000, 100, dataInizio, dataFine);
             customers.Add(cliente);
             loans.Add(prestito1);
+            loans.Add(prestito2);
         }
         public override string ToString()
         {
@@ -133,6 +135,28 @@ namespace chsarp_banca_oop
                 }
             }
             return loans;
+        }
+        public int TotalAmountLoan(string fiscalCode)
+        {
+            Customer customer = SearchCustomer(fiscalCode);
+            if(customer == null)
+            {
+                return 0;
+            }
+            List<int> loanAmounts = new List<int>();
+            foreach(Loan loan in loans)
+            {
+                if(loan.Customer.FiscalCode == customer.FiscalCode)
+                {
+                    loanAmounts.Add(loan.TotalLoan);
+                }
+            }
+            int total = 0;
+            foreach(int loanAmount in loanAmounts)
+            {
+                total += loanAmount;
+            }
+            return total;
         }
 
 

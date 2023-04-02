@@ -1,4 +1,6 @@
-﻿namespace chsarp_banca_oop
+﻿using System.Threading.Channels;
+
+namespace chsarp_banca_oop
 {
     internal class Program
     {
@@ -90,11 +92,14 @@
                     }
 
                     break;
+                case 5:
+                    Console.WriteLine("Inserisci il codice fiscale dell'utente da cercare");
+                    search = Console.ReadLine();
+                    Console.WriteLine($"Il totale dei prestiti del cliente cercato è: {sharpBank.TotalAmountLoan(search)} euro");
+
+                    break;
             }
 
-
-            Console.WriteLine("ecco la lista di tutti i clienti");
-            sharpBank.GetAllCustomers();
         }
     }
 }

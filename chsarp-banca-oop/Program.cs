@@ -6,8 +6,6 @@
         {
             string spacer = "-----------------------------------------";
 
-            List<Customer> customers = new List<Customer>();
-            List<Loan> loans = new List<Loan>();
 
             Bank sharpBank = new Bank("Sharp Bank");
             Console.WriteLine($"Software Gestionale - {sharpBank.Name}");
@@ -29,17 +27,30 @@
 
             int scelta = Convert.ToInt32(Console.ReadLine());
 
+
+            
             switch (scelta)
             {
             
             case 1:
                     Console.WriteLine("Aggiungi cliente");
+                    Console.WriteLine("Inserisci nome cliente");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Inserisci cognome cliente");
+                    string lastname = Console.ReadLine();
+                    Console.WriteLine("Inserisci codice fiscale del cliente");
+                    string fiscalCode = Console.ReadLine();
+                    Console.WriteLine("Inserisci lo stipendio del cliente");
+                    int salary = Convert.ToInt32(Console.ReadLine());
+                    sharpBank.AddCustomer(name, lastname, fiscalCode, salary);
                     break;
 
 
 
 
             }
+
+            
 
         }
     }

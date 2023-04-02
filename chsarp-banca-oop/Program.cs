@@ -27,8 +27,6 @@
 
             int scelta = Convert.ToInt32(Console.ReadLine());
 
-
-            
             switch (scelta)
             {
             
@@ -46,10 +44,35 @@
                     sharpBank.AddCustomer(name, lastname, fiscalCode, salary);
                     break;
             case 2:
-                    
+                    Console.WriteLine("Inserisci il cf del cliente");
+                    string customerFiscalCode = Console.ReadLine();
+                    Customer customerToEdit = sharpBank.SearchCustomer(customerFiscalCode); //recuperiamo il cliente da modificare
+                    if(customerToEdit != null)
+                    {
+                        Console.WriteLine("Inserisci il nuovo nome");
+                        string newName = Console.ReadLine();
+                        Console.WriteLine("Inserisci il nuovo cognome");
+                        string newLastname = Console.ReadLine();
+                        Console.WriteLine("Inserisc il nuovo codice fiscale");
+                        string newFiscalCode = Console.ReadLine();
+                        Console.WriteLine("Inserisci il nuovo stipendio");
+                        int newSalary = Convert.ToInt32(Console.ReadLine());
+
+                        //aggiorniamo i dati del cliente recuperato
+                        customerToEdit.Name = newName;
+                        customerToEdit.Lastname = newLastname;
+                        customerToEdit.FiscalCode = newFiscalCode;
+                        customerToEdit.Salary = newSalary;
+
+                        Console.WriteLine("Il cliente è stato aggiornato!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nessun cliente trovato");
+                    }
                     break;
             }
-
+            Console.WriteLine("ecco la lista di tutti i clienti");
             sharpBank.GetAllCustomers();
         }
     }

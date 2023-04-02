@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace chsarp_banca_oop
@@ -70,6 +71,50 @@ namespace chsarp_banca_oop
             customers.Add(newCustomer);
             Console.WriteLine("Cliente aggiunto");
         }
+
+        public Customer SearchCustomer(string fiscalCode)
+        {
+            foreach(Customer customer in customers)
+            {
+                if(fiscalCode.ToLower() == customer.FiscalCode.ToLower())
+                {
+                    return customer;
+                }
+            }
+            return null;
+        }
+        public bool EditCustomer(string nome,string lastname,string fiscalCode,int salary)
+        {
+            Customer editCustomer = SearchCustomer(fiscalCode);
+            if (editCustomer != null)
+            {
+                if(nome != "")
+                {
+                    editCustomer.Name = nome;
+                }
+                if(lastname != "")
+                {
+                    editCustomer.Lastname = lastname;
+                }
+                if(fiscalCode != "" && fiscalCode.Length == 16)
+                {
+                    editCustomer.FiscalCode = fiscalCode;
+                }
+                if(salary >= 0)
+                {
+                    editCustomer.Salary = salary;
+                }
+
+                return true;
+
+            }
+            else
+            { 
+                return false;
+            }
+        }
+
+
         public void AddLoan(Loan newLoan)
         {
             loans.Add(newLoan);

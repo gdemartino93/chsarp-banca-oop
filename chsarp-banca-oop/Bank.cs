@@ -158,6 +158,15 @@ namespace chsarp_banca_oop
             }
             return total;
         }
+        public int NumberOfInstallment(string fiscalCode)
+        {
+            Customer customer = SearchCustomer(fiscalCode);
+            if(customer == null)
+            {
+                return 0;
+            }
+            List<Loan> customerLoans = CustomerLoan(fiscalCode);
+        }
 
 
         public void AddLoan(Loan newLoan)

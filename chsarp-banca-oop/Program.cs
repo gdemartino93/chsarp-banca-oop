@@ -71,6 +71,12 @@
                         Console.WriteLine("Nessun cliente trovato");
                     }
                     break;
+                case 3:
+                    Console.WriteLine("Inserisci il codice fiscale dell'utente da cercare:");
+                    string search = Console.ReadLine(); //codice fiscale da cercare
+                    Customer customerFounded = sharpBank.SearchCustomer(search); //ci ritorna l'oggetto customer cercato
+                    customerFounded.ToString(); //metodo tostring per stampare l'oggetto cercato
+                    break;
             }
             Console.WriteLine("ecco la lista di tutti i clienti");
             sharpBank.GetAllCustomers();

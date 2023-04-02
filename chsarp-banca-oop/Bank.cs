@@ -22,7 +22,7 @@ namespace chsarp_banca_oop
             customers = new List<Customer>();
             loans = new List<Loan>();
 
-            Customer cliente = new Customer("helloname", "hellolastname", "AAAAAAAAAAAAAAAA", 12);
+            Customer cliente = new Customer("helloname", "hellolastname", "asdasdasdasdasda", 12);
             customers.Add(cliente);
         }
         public override string ToString()

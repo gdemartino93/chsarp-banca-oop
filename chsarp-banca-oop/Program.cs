@@ -29,7 +29,17 @@
 
             int scelta = Convert.ToInt32(Console.ReadLine());
 
+            switch (scelta)
+            {
+            
+            case 1:
+                    Console.WriteLine("Aggiungi cliente");
+                    break;
 
+
+
+
+            }
 
         }
     }

@@ -29,11 +29,18 @@ namespace chsarp_banca_oop
             return Name;
         }
 
-        public void GetAllCustomer()
+        public void GetAllCustomers()
         {
             for ( int i = 0; i < customers.Count; i++)
             {
                 customers[i].ToString();
+            }
+        }
+        public void GetAllLoans()
+        {
+            for (int i = 0;i < loans.Count; i++)
+            {
+                loans[i].ToString();
             }
         }
         public void AddCustomer(string name, string lastname, string fiscalCode, int salary)

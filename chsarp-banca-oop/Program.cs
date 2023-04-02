@@ -45,13 +45,12 @@
                     int salary = Convert.ToInt32(Console.ReadLine());
                     sharpBank.AddCustomer(name, lastname, fiscalCode, salary);
                     break;
-
-
-
-
+            case 2:
+                    Console.WriteLine("adasd");
+                    break;
             }
 
-            sharpBank.GetAllCustomer();
+            sharpBank.GetAllCustomers();
         }
     }
 }

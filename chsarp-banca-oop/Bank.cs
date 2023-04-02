@@ -21,7 +21,7 @@ namespace chsarp_banca_oop
             customers = new List<Customer>();
             loans = new List<Loan>();
 
-            Customer cliente = new Customer("asd", "asd", "asd", 12);
+            Customer cliente = new Customer("helloname", "hellolastname", "AAAAAAAAAAAAAAAA", 12);
             customers.Add(cliente);
         }
         public override string ToString()
@@ -29,20 +29,36 @@ namespace chsarp_banca_oop
             return Name;
         }
 
-
-
-   
-        public void AddCustomer(string name, string lastname, string fiscalCode,int salary)
+        public void GetAllCustomer()
         {
-
-            for( int i = 0; i < customers.Count; i++ )
+            for ( int i = 0; i < customers.Count; i++)
             {
-                if (customers[i].FiscalCode == fiscalCode )
+                customers[i].ToString();
+            }
+        }
+        public void AddCustomer(string name, string lastname, string fiscalCode, int salary)
+        {
+            for (int i = 0; i < customers.Count; i++)
+            {
+                if (customers[i].FiscalCode == fiscalCode)
                 {
-                     Console.WriteLine("Cliente già registrato");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Cliente già registrato");
+                    Console.ResetColor();
                     return;
                 }
             }
+
+            while (fiscalCode.Length != 16)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Codice fiscale Errato. Il cf deve avere 16 caratteri");
+                Console.WriteLine("Reinserisci il codice fiscale:");
+                Console.ResetColor();
+
+                fiscalCode = Console.ReadLine();
+            }
+
             Customer newCustomer = new Customer(name, lastname, fiscalCode, salary);
             customers.Add(newCustomer);
             Console.WriteLine("Cliente aggiunto");

@@ -31,5 +31,9 @@ namespace chsarp_banca_oop
             StartDate = startDate;
             EndDate = endDate;
         }
+        public override string ToString()
+        {
+            return $"Prestito id: {Id} - Cliente: {Customer.Name} {Customer.Lastname}. Totale del prestito: {TotalLoan} - Rata: {Installment}. Data inizio prestito: {StartDate} - Data fine prestito {EndDate}";
+        }
     }
 }
